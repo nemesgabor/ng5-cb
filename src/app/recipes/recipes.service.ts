@@ -30,6 +30,11 @@ export class RecipeService {
 
   }
 
+  setRecipes(recipes:Recipe[]){
+    this.recipes = recipes;
+    this.recipesChanged.next(this.recipes);
+  }
+
   getRecipes(){
     return this.recipes.slice();
   }
@@ -37,6 +42,7 @@ export class RecipeService {
   addIngredientToShoppingList(ingredients: Ingredient[]){
     this.sListService.addIngredients(ingredients);
   }
+
 
   getRecipe(index:number){
     return this.recipes[index];
