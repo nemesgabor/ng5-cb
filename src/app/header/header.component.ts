@@ -1,5 +1,6 @@
 import { DataStorageService } from '../shared/data-storage.service';
 import { Component} from '@angular/core';
+import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -7,7 +8,9 @@ import { Component} from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  constructor(private dataStorageService:DataStorageService) { }
+  constructor(
+    private dataStorageService:DataStorageService,
+    private authService:AuthService) { }
 
   onSaveData(){
     this.dataStorageService.storeRecipes()
